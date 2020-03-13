@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Protos\greet.proto.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.23.2" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="13.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Protos\greet.proto1.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="OpenAPIs\swagger.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="OpenAPIs\swagger1.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="OpenAPIs\swagger2.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\proto-files\greet.proto" GrpcServices="Server">
+      <Link>Protos\greet.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Protos\greet.proto.json">
+      <GrpcServices>Server</GrpcServices>
+    </Content>
+  </ItemGroup>
+
+
+
+</Project>
