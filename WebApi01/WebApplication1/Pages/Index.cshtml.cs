@@ -22,7 +22,7 @@ namespace WebApplication1.Pages
         {
             try
             {
-                string baseurl = "https://localhost:5001";
+                string baseurl = "https://localhost:5002";
                 var client = new HttpClient();
                 swaggerClient foo = new swaggerClient(baseurl, client);
                 var result = await foo.WeatherForecastAsync();
